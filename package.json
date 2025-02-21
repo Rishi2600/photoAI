@@ -1,5 +1,5 @@
 {
-  "name": "photoAI",
+  "name": "photoai",
   "private": true,
   "scripts": {
     "build": "turbo run build",
