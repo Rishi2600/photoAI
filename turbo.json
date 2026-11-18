@@ -4,6 +4,9 @@
   "globalDependencies": [
     ".env"
   ],
+  "globalEnv": [
+    "NEON_DB_URL"
+  ],
   "tasks": {
     "build": {
       "dependsOn": [
