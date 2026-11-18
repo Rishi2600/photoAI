@@ -1,9 +1,15 @@
 import Link from "next/link";
 
 const steps = [
-  { title: "Upload 10–20 selfies", text: "Different angles, light and places." },
+  {
+    title: "Upload 10–20 selfies",
+    text: "Different angles, light and places.",
+  },
   { title: "Photos learns your face", text: "Your own private AI model." },
-  { title: "Get new photos of you", text: "Any style or place, or a whole group around one topic." },
+  {
+    title: "Get new photos of you",
+    text: "Any style or place, or a whole group around one topic.",
+  },
 ];
 
 export default function Home() {
@@ -14,7 +20,8 @@ export default function Home() {
           AI photos of you, without a photoshoot.
         </h1>
         <p className="text-lg text-muted">
-          Upload a few selfies once. Then make as many new photos of yourself as you like.
+          Upload a few selfies once. Then make as many new photos of yourself as
+          you like.
         </p>
         <Link
           href="/sign-up"
@@ -26,8 +33,13 @@ export default function Home() {
 
       <ol className="grid gap-4 sm:grid-cols-3">
         {steps.map((step, i) => (
-          <li key={step.title} className="rounded-2xl border border-line bg-white p-6">
-            <span className="text-sm font-medium text-accent">Step {i + 1}</span>
+          <li
+            key={step.title}
+            className="rounded-2xl border border-line bg-white p-6"
+          >
+            <span className="text-sm font-medium text-accent">
+              Step {i + 1}
+            </span>
             <h2 className="mt-2 font-semibold">{step.title}</h2>
             <p className="mt-1 text-sm text-muted">{step.text}</p>
           </li>
