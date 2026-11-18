@@ -59,3 +59,19 @@ export const verification = pgTable("verification", {
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at").notNull().defaultNow(),
 });
+
+// Selfies a user uploads to train their face model. The image itself lives in
+// storage (see lib/storage.ts) under fileKey.
+export const selfie = pgTable(
+  "selfie",
+  {
+    id: text("id").primaryKey(),
+    userId: text("user_id")
+      .notNull()
+      .references(() => user.id, { onDelete: "cascade" }),
+    fileKey: text("file_key").notNull(),
+    mimeType: text("mime_type").notNull(),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+  },
+  (t) => [index("selfie_user_id_idx").on(t.userId)],
+);
